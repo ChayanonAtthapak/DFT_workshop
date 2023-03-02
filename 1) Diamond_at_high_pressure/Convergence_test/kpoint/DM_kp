@@ -39,14 +39,12 @@ EOF
 done
 
 rm Etot
-rm time
 
 for j in 3 4 5 6 7 8 9 10 11 12 13
 do
     echo "for n of kp = $j $j $j" 
     grep ! DM_kp_$j.out  
     grep ! DM_kp_$j.out >> Etot
-    grep PWSCF DM_kp_$j.out >> time
 
 done
 
