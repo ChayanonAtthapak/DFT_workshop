@@ -1,0 +1,51 @@
+#!/bin/sh
+
+for i in 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 
+do
+cat > DM_ecut_$i.in << EOF
+
+&CONTROL
+    calculation = 'scf'
+    restart_mode = 'from_scratch'
+    prefix = 'DM'
+    pseudo_dir = './../'
+    outdir = './outdir/'
+/
+&SYSTEM
+    ibrav = 2, A = 3.57, nat = 2, ntyp = 1,
+    ecutwfc = $i,
+    ecutrho = 400,
+    occupations = "smearing" , smearing = "gaussian" , degauss = 0.01D0,
+/
+&ELECTRONS
+    electron_maxstep = 100,
+    mixing_beta = 0.7,
+    conv_thr = 1.0d-6,
+/
+ATOMIC_SPECIES
+ C 12.0107 C.pbe-n-kjpaw_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS {crystal}
+  C  0.000000  0.000000  0.000000
+  C  0.250000  0.250000  0.250000
+
+K_POINTS {automatic}
+9 9 9 0 0 0
+
+EOF
+
+../../../qe-7.0/bin/pw.x <DM_ecut_$i.in> DM_ecut_$i.out
+
+done
+
+rm Etot
+
+for j in 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100
+do
+    echo "for cutoff = $j Ry" 
+    grep ! DM_ecut_$j.out  
+    grep ! DM_ecut_$j.out >> Etot
+
+done
+
+
