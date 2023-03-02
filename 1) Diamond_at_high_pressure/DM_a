@@ -1,0 +1,49 @@
+#!/bin/sh
+
+for i in 3.0 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 3.9 4.0
+do
+cat > DM_a_$i.in << EOF
+
+&CONTROL
+    calculation = 'scf'
+    restart_mode = 'from_scratch'
+    prefix = 'DM_a_$i'
+    pseudo_dir = './../'
+    outdir = './outdir/'
+/
+&SYSTEM
+    ibrav = 2, A = $i, nat = 2, ntyp = 1,
+    ecutwfc = 75,
+    ecutrho = 400,
+    occupations = "smearing" , smearing = "gaussian" , degauss = 0.01D0,
+/
+&ELECTRONS
+    electron_maxstep = 100,
+    mixing_beta = 0.7,
+    conv_thr = 1.0d-6,
+/
+ATOMIC_SPECIES
+ C 12.0107 C.pbe-n-kjpaw_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS {crystal}
+  C  0.000000  0.000000  0.000000
+  C  0.250000  0.250000  0.250000
+
+K_POINTS {automatic}
+9 9 9 0 0 0
+
+EOF
+
+../../../qe-7.0/bin/pw.x <DM_a_$i.in> DM_a_$i.out
+
+done
+
+rm Etot
+
+for j in 3.0 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 3.9 4.0
+do
+    echo "for a = $j A" 
+    grep ! DM_a_$j.out  
+    grep ! DM_a_$j.out >> Etot
+
+done
