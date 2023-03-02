@@ -1,0 +1,16 @@
+#!/bin/sh
+
+cat > dos_DM_a_3.0.in << EOF
+
+&DOS
+    prefix ='DM_a_3.0'
+    outdir = './outdir/'
+    fildos = 'gap_DM_a_3.0_test.dos',
+    emin = -10.0,
+    emax = 50.0,
+/
+EOF
+
+../../../qe-7.0/bin/dos.x <dos_DM_a_3.0.in> dos_DM_a_3.0.out
+
+
