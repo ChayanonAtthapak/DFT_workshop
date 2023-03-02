@@ -6,3 +6,9 @@ QE tutorials for workshop of Density Functional Theory teaching
 2. Basis Python libralies: Numpy, Matplotlib, Pandas, Sklearn
 
 This workshop is in progress (Not yet completed).
+
+**Projects**
+1. Phase Transition of Strontium (FCC to BCC)
+2. Electronic Band Gap of Diamond at High Pressure
+3. Electronic Properties of Boron Doped Diamond
+4. Magnetic Properties of BCC Iron(Fe)
