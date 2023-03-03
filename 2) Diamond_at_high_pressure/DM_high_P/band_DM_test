@@ -1,0 +1,14 @@
+#!/bin/sh
+
+cat > band_DM_a_3.0.in << EOF
+
+&BANDS
+    prefix ='DM_a_3.0'
+    outdir = './outdir/'
+    filband = 'gap_DM_a_3.0_test.band',
+/
+EOF
+
+../../../qe-7.0/bin/bands.x <band_DM_a_3.0.in> band_DM_a_3.0.out
+
+
