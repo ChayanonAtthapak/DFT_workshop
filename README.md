@@ -13,9 +13,9 @@ This workshop is in progress (Not yet completed).
   (...)
 2. Electronic Band Gap of Diamond at High Pressure
   - Available inputs : 
-    - Structure example : premitive diamond, conventional diamond, and conventional diamond (a=3.0$\AA$)
+    - Structure example : premitive diamond, conventional diamond, and conventional diamond (a=3.0 Å)
     - Script example : Ecut convergence testing, kpoint convergence testing, and adjusting a parameter SCF calculation
-    - Input example : non-SCF calculation (a=3.0 \AA), DOS calculation (a=3.0$\AA$), and Band calculation (a=3.0$\AA$)
+    - Input example : non-SCF calculation (a=3.0 Å), DOS calculation (a=3.0 Å), and Band calculation (a=3.0 Å)
     - Jupyter notebooks : convergence testing, Reading E-V diagram for pressure calculation, DOS plotting, and Band structure plotting
   - Convergence testing of premitive diamond 
   - SCF calculation
