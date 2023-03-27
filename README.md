@@ -16,7 +16,7 @@ This workshop is in progress (Not yet completed).
     - Structure example : premitive diamond, conventional diamond, and conventional diamond (a=3.0$\AA$)
     - Script example : Ecut convergence testing, kpoint convergence testing, and adjusting a parameter SCF calculation
     - Input example : non-SCF calculation (a=3.0$\AA$), DOS calculation (a=3.0$\AA$), and Band calculation (a=3.0$\AA$)
-    - Jupyter notebook : convergence testing, Reading E-V diagram for pressure calculation, DOS plotting, and Band structure plotting
+    - Jupyter notebooks : convergence testing, Reading E-V diagram for pressure calculation, DOS plotting, and Band structure plotting
   - Convergence testing of premitive diamond 
   - SCF calculation
   - Pressure calculation from E-V diagram
@@ -25,6 +25,9 @@ This workshop is in progress (Not yet completed).
   - Band structure calculation (optional)
   - Outcome of this project: DOS and band gap of Diamond at 0, 50, 100 and 150 GPa
 3. Electronic Properties of Boron Doped Diamond
+  - Available inputs : 
+    - Structure example : conventional diamond and 3 structures of boron doped conventional diamond 
+    - Input example : vc-relax inputs of 4 structures
   - Structure optimization (vc-relax) of conventional diamond (B0)
   - Structure optimization (vc-relax) of Boron doped diamond : 1atom doped (B1) and two configuration of 2atom doped (B2_1 and B2_2)
   - non-SCF calculation
