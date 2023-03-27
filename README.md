@@ -15,7 +15,7 @@ This workshop is in progress (Not yet completed).
   - Available inputs : 
     - Structure example : premitive diamond, conventional diamond, and conventional diamond (a=3.0$\AA$)
     - Script example : Ecut convergence testing, kpoint convergence testing, and adjusting a parameter SCF calculation
-    - Input example : non-SCF calculation (a=3.0 ${\AA}$), DOS calculation (a=3.0$\AA$), and Band calculation (a=3.0$\AA$)
+    - Input example : non-SCF calculation (a=3.0 \AA), DOS calculation (a=3.0$\AA$), and Band calculation (a=3.0$\AA$)
     - Jupyter notebooks : convergence testing, Reading E-V diagram for pressure calculation, DOS plotting, and Band structure plotting
   - Convergence testing of premitive diamond 
   - SCF calculation
