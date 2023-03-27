@@ -12,12 +12,17 @@ This workshop is in progress (Not yet completed).
 1. Phase Transition of Strontium (FCC to BCC)
   (...)
 2. Electronic Band Gap of Diamond at High Pressure
+  - Available inputs : 
+    - Structure example : premitive diamond, conventional diamond, and conventional diamond (a=3.0$\AA$)
+    - Script example : Ecut convergence testing, kpoint convergence testing, and adjusting a parameter SCF calculation
+    - Input example : non-SCF calculation (a=3.0$\AA$), DOS calculation (a=3.0$\AA$), and Band calculation (a=3.0$\AA$)
+    - Jupyter notebook : convergence testing, Reading E-V diagram for pressure calculation, DOS plotting, and Band structure plotting
   - Convergence testing of premitive diamond 
   - SCF calculation
   - Pressure calculation from E-V diagram
   - non-SCF calculation
   - DOS calculation
-  - Band calculation (optional)
+  - Band structure calculation (optional)
   - Outcome of this project: DOS and band gap of Diamond at 0, 50, 100 and 150 GPa
 3. Electronic Properties of Boron Doped Diamond
   - Structure optimization (vc-relax) of conventional diamond (B0)
