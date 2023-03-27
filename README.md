@@ -12,8 +12,8 @@ This workshop is in progress (Not yet completed).
 1. Phase Transition of Strontium (FCC to BCC)
   (...)
 2. Electronic Band Gap of Diamond at High Pressure
-  2.1. Convergence testing of premitive diamond 
-  2.2. SCF calculation
+  - Convergence testing of premitive diamond 
+  - SCF calculation
   2.3. Pressure calculation from E-V diagram
   2.4. non-SCF calculation
   2.5. DOS calculation
