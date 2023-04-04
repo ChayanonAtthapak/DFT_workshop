@@ -1,0 +1,54 @@
+ #!/bin/sh
+
+for i in 2.53 2.59 2.64 2.7 
+do
+cat > non.relax.$i.in << EOF
+
+&CONTROL
+    calculation = 'relax'
+    restart_mode = 'from_scratch'
+    prefix = 'nonFe'
+    pseudo_dir = '/home/oomchayanon/DFTproject/4/'
+    outdir = './'
+    forc_conv_thr = 1d-5,
+/
+&SYSTEM
+    ibrav = 1, A = $i , nat = 2, ntyp = 1
+    ecutwfc = 90,
+    ecutrho = 500,
+/
+&ELECTRONS
+    electron_maxstep = 1000,
+    mixing_beta = 0.7,
+    conv_thr = 1.0d-8,
+/
+&IONS
+     ion_dynamics='bfgs',
+/
+&CELL
+     cell_dynamics='bfgs',
+     press=0.0,
+     press_conv_thr=0.5,
+/
+ATOMIC_SPECIES
+ Fe 55.845 Fe.pbe-spn-rrkjus_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS {crystal}
+  Fe  0.000000  0.000000  0.000000
+  Fe  0.500000  0.500000  0.500000 
+
+K_POINTS {automatic}
+17 17 17 0 0 0
+
+EOF
+
+mpirun -np 6 ../../../qe-6.3/bin/pw.x <non.relax.$i.in> non.relax.$i.out
+
+done
+
+for j in 2.53 2.59 2.64 2.7
+do
+
+    echo "for a = $j Ry"
+    grep ! non.relax.$j.out
+done

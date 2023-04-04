@@ -1,0 +1,61 @@
+ #!/bin/sh
+
+for i in 1.91 2.01 2.1 2.18
+do
+cat > fer.relax.$i.in << EOF
+
+&CONTROL
+    calculation = 'relax'
+    restart_mode = 'from_scratch'
+    prefix = 'ferFe'
+    pseudo_dir = '/home/oomchayanon/DFTproject/4/'
+    outdir = './'
+    forc_conv_thr = 1d-5,
+/
+&SYSTEM
+    ibrav = 1, A = $i , nat = 2, ntyp = 2
+    ecutwfc = 90,
+    ecutrho = 500,
+    nspin = 2,
+    starting_magnetization(1)= 1.0
+    starting_magnetization(2)= 1.0 
+    occupations = 'smearing',
+    smearing = 'gaussian',
+    degauss = 0.01D0,
+/
+&ELECTRONS
+    electron_maxstep = 1000,
+    mixing_beta = 0.7,
+    conv_thr = 1.0d-8,
+/
+&IONS
+     ion_dynamics='bfgs',
+/
+&CELL
+     cell_dynamics='bfgs',
+     press=0.0,
+     press_conv_thr=0.5,
+/
+ATOMIC_SPECIES
+ Fe1 55.845 Fe.pbe-spn-rrkjus_psl.1.0.0.UPF
+ Fe2 55.845 Fe.pbe-spn-rrkjus_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS {crystal}
+  Fe1  0.000000  0.000000  0.000000
+  Fe2  0.500000  0.500000  0.500000 
+
+K_POINTS {automatic}
+17 17 17 0 0 0
+
+EOF
+
+mpirun -np 6 ../../../qe-6.3/bin/pw.x <fer.relax.$i.in> fer.relax.$i.out
+
+done
+
+for j in 1.91 2.01 2.1 2.18
+do
+
+    echo "for a = $j Ry"
+    grep ! fer.relax.$j.out
+done
