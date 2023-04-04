@@ -1,6 +1,6 @@
- #!/bin/sh
+#!/bin/sh
 
-for i in 1.91 2.01 2.1 2.18
+for i in 2.0 2.2 2.4 2.6 2.8 3.0 3.2 3.4
 do
 cat > fer.relax.$i.in << EOF
 
@@ -8,17 +8,17 @@ cat > fer.relax.$i.in << EOF
     calculation = 'relax'
     restart_mode = 'from_scratch'
     prefix = 'ferFe'
-    pseudo_dir = '/home/oomchayanon/DFTproject/4/'
-    outdir = './'
+    pseudo_dir = './'
+    outdir = './ourdir/'
     forc_conv_thr = 1d-5,
 /
 &SYSTEM
     ibrav = 1, A = $i , nat = 2, ntyp = 2
-    ecutwfc = 90,
+    ecutwfc = $$$,
     ecutrho = 500,
     nspin = 2,
-    starting_magnetization(1)= 1.0
-    starting_magnetization(2)= 1.0 
+    starting_magnetization(1)= 1.0,
+    starting_magnetization(2)= 1.0,
     occupations = 'smearing',
     smearing = 'gaussian',
     degauss = 0.01D0,
@@ -45,17 +45,20 @@ ATOMIC_POSITIONS {crystal}
   Fe2  0.500000  0.500000  0.500000 
 
 K_POINTS {automatic}
-17 17 17 0 0 0
+$$ $$ $$ 0 0 0
 
 EOF
 
-mpirun -np 6 ../../../qe-6.3/bin/pw.x <fer.relax.$i.in> fer.relax.$i.out
+../../../qe-7.0/bin/pw.x <fer.relax.$i.in> fer.relax.$i.out
 
 done
 
-for j in 1.91 2.01 2.1 2.18
-do
+rm Etot_fer
 
+for j in 2.0 2.2 2.4 2.6 2.8 3.0 3.2 3.4
+do
     echo "for a = $j Ry"
-    grep ! fer.relax.$j.out
+    grep ! anti.relax.$j.out
+    grep ! anti.relax.$j.out >> Etot_fer
+    
 done
