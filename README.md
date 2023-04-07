@@ -9,8 +9,11 @@ QE tutorials for workshop of Density Functional Theory teaching
 This workshop is in progress (Not yet completed).
 
 **Projects**
-1. Phase Transition of Strontium (FCC to BCC)
-  (...)
+1. Phase Transition of Strontium (FCC to BCC) (optional)
+  - Convergence testing of premitive fcc and bcc strontium.
+  - SCF calculation
+  - Pressure and Enthalpy calculation from E-V diagram
+  - Outcome of this project: fcc-bcc phase transition diagram, Pressure at transition point.
 2. Electronic Band Gap of Diamond at High Pressure.
   - Available inputs : 
     - Structure example : premitive diamond, conventional diamond, and conventional diamond (a=3.0 Å).
