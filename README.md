@@ -1,5 +1,5 @@
 # DFT_workshop
-QE tutorials for workshop of Density Functional Theory teaching
+QE tutorials for workshop of Density Functional Theory course
 
 **Requirements**
 1. Quantum ESPRESSO (QE) for electronic-structure calculations: https://www.quantum-espresso.org/
