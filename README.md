@@ -63,7 +63,7 @@ Now, the binary files or their symbolic links would be placed in the bin directo
 1. Open Terminal 
 2. (Optional) Create environment: conda create —name “name of env”
 3. Install homebrew: please see https://docs.brew.sh/Installation
-4. Install these commands using the command "brew": brew install gcc open-mpi cmake wget
+4. Install these commands using the command "brew": brew install gcc open-mpi cmake wget --> "brew help" to get started
 6. Download QE on Ubuntu using the command "wget": wget https://github.com/QEF/q-e/releases/download/qe-7.0/qe-7.0-ReleasePack.tgz or wget https://gitlab.com/QEF/q-e/-/archive/qe-7.2/q-e-qe-7.2.tar.gz (latest version is 7.2 at the time of writing)
 7. Un-tar the source files using the command "tar -zxvf": tar -zxvf q-e-qe-7.2.tar.gz
 8. Change to the qe directory using the command "cd": cd q-e-qe-7.2
