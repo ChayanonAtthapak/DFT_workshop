@@ -71,7 +71,7 @@ Now, the binary files or their symbolic links would be placed in the bin directo
 10. compile everything using the command "make all" or compile individual packages using the command "make ..." 
 Now, the binary files or their symbolic links would be placed in the bin directory !!
 
-** If you encounter a problem in the step "make all": please see https://mattermodeling.stackexchange.com/questions/7146/installing-quantum-espresso-on-an-apple-m1-processor-possible
+** If you encounter a problem in the step "make all": please see https://mattermodeling.stackexchange.com/questions/7146/installing-quantum-espresso-on-an-apple-m1-processor-possible or https://github.com/nguyen-group/QE-SSP/discussions/7 
 
 ## Basic command lines on the terminal (bash)
 - ls: Lists the files and directories in the current working directory
