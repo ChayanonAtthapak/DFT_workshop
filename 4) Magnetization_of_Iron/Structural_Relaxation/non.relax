@@ -45,7 +45,7 @@ $$ $$ $$ 0 0 0
 
 EOF
 
-../../../qe-7.0/bin/pw.x <anti.relax.$i.in> anti.relax.$i.out
+../../../qe-7.0/bin/pw.x <non.relax.$i.in> non.relax.$i.out
 
 done
 
