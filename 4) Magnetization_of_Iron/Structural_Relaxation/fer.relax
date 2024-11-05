@@ -58,7 +58,7 @@ rm Etot_fer
 for j in 2.0 2.2 2.4 2.6 2.8 3.0 3.2 3.4
 do
     echo "for a = $j Ry"
-    grep ! anti.relax.$j.out
-    grep ! anti.relax.$j.out >> Etot_fer
+    grep ! fer.relax.$j.out
+    grep ! fer.relax.$j.out >> Etot_fer
     
 done
